@@ -28,4 +28,14 @@ app.get('/notes', (req,res)=>{
 })
 
 
+/* Delete Notes */
+app.delete('/notes/:id',(req,res)=>{
+    const index= (req.params.id);
+    delete notes[index];
+
+    res.status(200).json({
+        message: 'Note deleted successfully'
+    })
+})
+
 module.exports = app;
