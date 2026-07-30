@@ -19,4 +19,13 @@ app.post('/notes', (req, res)=>{
 })
 
 
+app.get('/notes', (req,res)=>{
+    //sends the notes array as response
+    res.status(200).json({
+        message: 'Notes fetched successfully',
+        notes: notes
+    })
+})
+
+
 module.exports = app;
