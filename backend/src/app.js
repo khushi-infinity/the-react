@@ -38,4 +38,16 @@ app.delete('/notes/:id',(req,res)=>{
     })
 })
 
+
+// Update the notes of the description
+app.patch('/notes/:id', (req,res)=>{
+    const index = req.params.id;
+    const description = req.body.description;
+
+    notes[index].description = description;
+    
+    res.status(200).json({
+        message: 'Note updated successfully'
+    })
+})
 module.exports = app;
